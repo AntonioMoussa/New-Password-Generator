@@ -1,0 +1,318 @@
+:root {
+    --picton-blue: #44c5ec;
+    --biscay: #17255e;
+    --mariner: #267dc8;
+    --black-pearl: #060a22;
+    --sapphire: #28479e;
+    --azure: #2b69ae;
+    --blizzard-blue: #b1e5f0;
+    --butterfly-bush: #574da4;
+    --bay-of-many: #204687;
+    --wild-blue-yonder: #8c91ba;
+}
+/* Hela sidan och centrering */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black-pearl); /* Bakgrundsfärg */
+    background: url('Background.jpg') no-repeat center center fixed; 
+    background-size: cover; 
+}
+
+body {
+    font-family: "Jua", sans-serif;
+    color: var(--blizzard-blue); /* Textfärg */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -40px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+    font-size: 1.8rem;
+    background-image: linear-gradient(90deg, var(--picton-blue), var(--biscay), var(--mariner), var(--butterfly-bush), var(--wild-blue-yonder), var(--azure));
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: colorShift 5s infinite linear;
+    white-space: nowrap; 
+   
+}
+@keyframes colorShift {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    h3 {
+        font-size: 1.5rem; 
+    }
+}
+
+@media (max-width: 400px) {
+    h3 {
+        font-size: 1.2rem; /
+    }
+}
+
+.container {
+    padding: 5px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 300px; 
+    max-height: 400px; 
+}
+
+@media (max-width: 1024px) {
+    .container {
+        width: 80%;  
+        padding: 15px 
+    }
+}
+/* mindre skärmar */
+@media (max-width: 600px) {
+    .password-display-container {
+        width: 90%;
+        padding: 20px 0px; 
+    }
+}
+
+.password-display-container, .controls {
+    width: 100%; 
+    max-width: 400px; 
+}
+
+.password-display-container {
+    border-radius: 8px;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.password-display {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+#generated-password {
+    font-family: "Jua", sans-serif;
+    border: none;
+    background-color: transparent;
+    color: var(--blizzard-blue);
+    font-size: 18px;
+    width: 100%;
+    text-align: left;
+    padding: 5px;
+    outline: none;
+}
+
+#copy-button {
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    position: relative; 
+    right: -10px;
+    top: -3px;
+}
+
+#copy-button img {
+    width: 100%; 
+    height: auto;
+}
+
+.number {
+    font-family: "Jua", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    color: var(--biscay);
+    font-size: 35px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+}
+
+.character {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--blizzard-blue);
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.controls {
+    width: 100%;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.3); 
+}
+
+.controls label {
+    display: block;
+    pointer-events: none;
+}
+
+.middle {
+    width: 75%;
+    margin-bottom: 20px;
+}
+
+.slider-container {
+   margin-bottom: 10px;
+}
+
+.slider-container .slider {
+    -webkit-appearance: none;
+    appearance: none; 
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    outline: none;
+    background: linear-gradient(to left, var(--azure), var( --wild-blue-yonder));
+}
+
+.slider-container .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: var(--picton-blue);
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    transition: .3s ease-in-out;
+}
+
+.strength-meter, #generate-button {
+    height: 50px;
+    width: 100%; 
+    max-width: 350px; 
+}
+
+.strength-meter {
+    border: 1px solid var(--blizzard-blue); 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background: transparent; 
+    border-radius: 5px;
+}
+
+.strength-label {
+    display: flex;
+    color: var(--blizzard-blue);
+    margin: 5px;
+}
+
+.strength-bars {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.bar {
+    height: 40px;
+    width: 15px;
+    background-color: transparent; 
+    border-radius: 4px;
+    border: 1px solid var(--blizzard-blue);
+    margin: 1px;
+    border-radius: 5px;
+}
+
+#generate-button {
+    font-family: "Jua", sans-serif;
+    background-color: transparent;
+    border: 1px solid var(--blizzard-blue); 
+    color: var(--blizzard-blue);
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#generate-button span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+#generate-button:hover span {
+    transform: scale(1.1);
+    color: #fff;
+}
+
+input[type="checkbox"] {
+    pointer-events: all;
+    margin: 0px 10px 0px 2px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #354980;;
+    border: 1px solid #fff;
+    display: inline-block;
+    position: relative;
+    border-radius: 5px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #17255e; 
+    color: #fff; 
+}
+
+input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 4px;
+    height: 8px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+input[type="checkbox"]:hover {
+    border-color: #44c5ec; 
+}

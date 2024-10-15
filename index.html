@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="lock" href="lock.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h3>Password Generator</h3>
+    
+        <div class="password-display-container">
+            <div class="password-display"> 
+                <input type="text" id="generated-password" readonly>
+                <button id="copy-button"> <img src="copy-icon.png" alt=""></button>
+            </div>
+        </div>
+
+            <div class="controls">
+                        
+            <div class="number">
+                <div class=" Character">Character Length</div> <span id="length-value">15</span>
+                </div>
+                    
+            <div class="middle">
+                    <div class="slider-container">
+                     <input class="slider" type="range" min="1" max="15" value="15">
+                </div>
+            </div>
+                <div class="text">
+                    <label><input type="checkbox" id="uppercase"> Include Uppercase Letters</label>
+                    <label><input type="checkbox" id="lowercase" checked> Include Lowercase Letters</label>
+                    <label><input type="checkbox" id="numbers" checked> Include Numbers</label>
+                    <label><input type="checkbox" id="symbols"> Include Symbols</label>
+                </div>
+                <div class="strength-meter">
+                    <div class="strength-label">Strength</div>
+                    <div id="strength-text">MEDIUM</div>
+                    <div class="strength-bars">
+                        <div class="bar" id="bar-1"></div>
+                        <div class="bar" id="bar-2"></div>
+                        <div class="bar" id="bar-3"></div>
+                        <div class="bar" id="bar-4"></div>
+                    </div>
+                </div>
+                <button id="generate-button"><span>Generate</span></button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
